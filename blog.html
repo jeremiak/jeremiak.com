@@ -1,0 +1,23 @@
+---
+layout: layouts/default.html
+permalink: /blog/
+title: Blog
+description: My blog posts
+---
+
+<h1><span class="strike">Blog</span> Rants & ramblings</h1>
+
+<ul class="list-style-none p0">
+{% for post in collections.posts reversed %}
+  <li class="bg-white line-height-2 mb2 p1 sm-p2 pr-p0">
+    <div class="flex flex-column sm-flex-row space-between">
+      <p class="h3 m0"><a class="pr-p0" href="{{ post.url }}">{{ post.data.title }}</a></p>
+      <p class="m0 mt2 sm-mt0 italic">written on {{ post.date | date: '%d %b %Y'}}</p>
+    </div>
+    <p>{% excerpt post %}</p>
+    <p class="right-align mb0">
+      <a class="pr-p0" href="{{ post.url }}">Read more...</a>
+    </p>
+  </li>
+{% endfor %}
+</ul>

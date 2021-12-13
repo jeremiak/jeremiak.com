@@ -1,0 +1,25 @@
+---
+layout: layouts/default.html
+permalink: /projects/
+title: Work
+---
+
+<h1><span class="strike">Work</span> Projects & pieces</h1>
+
+<ul class="list-style-none p0">
+{% assign projects = collections.projects | byorder %}
+{% for project in projects %}
+  {% unless project.data.hide %}
+    <li class="bg-white line-height-2 mb2 p1 sm-p2 pr-p0">
+      <p class="h3 m0">
+        {% if project.data.href %}
+          <a class="pr-p0" href="{{ project.data.href }}">{{ project.data.name }}</a>
+        {% else %}
+          <span class="pr-p0">{{ project.data.name }}</span>
+        {% endif %}
+      </p>
+      {{ project.templateContent }}
+    </li>
+  {% endunless %}
+{% endfor %}
+</ul>

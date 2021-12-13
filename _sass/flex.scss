@@ -1,0 +1,31 @@
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+@media #{$breakpoint-sm} {
+  .sm-flex-row {
+    flex-direction: row;
+  }
+
+  .sm-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+@media #{$breakpoint-md} {
+  .md-flex-row {
+    flex-direction: row;
+  }
+
+  .md-row-reverse {
+    flex-direction: row-reverse;
+  }
+}

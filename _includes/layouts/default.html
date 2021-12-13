@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      {% include head.html %}
+      <title>{{ title }}</title>
+    </head>
+    <body class="bg-yellow border border-gold border-10 col-12 mh100 m0 p1 sm-p2 md-px4 pr-border-none pr-bg-none pr-h-auto">
+      <nav class="flex max-width-3 mx-auto row-reverse pr-hide">
+        <ul class="flex flex-column sm-flex-row list-style-none m0 p0">
+          <li class="mb1 mr1"><a href="/">Home</a></li>
+          <li class="mb1 mr1"><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Work</a></li>
+        </ul>
+      </nav>
+      <div class="max-width-3 mx-auto">
+        <main>
+          {{ content }}
+        </main>
+      </div>
+      <footer class="center">
+
+      </footer>
+      {% include javascript.html %}
+    </body>
+</html>

@@ -1,0 +1,37 @@
+.bg-gold {
+  background-color: $gold;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+@media print {
+  .pr-bg-none {
+    background-color: none;
+  }
+}
+
+.gray {
+  color: $gray;
+}
+
+.blue {
+  color: $blue;
+}
+
+.teal {
+  color: $teal;
+}
+
+.stroke-black {
+  stroke: $black;
+}
+
+.stroke-gold {
+  stroke: $gold;
+}

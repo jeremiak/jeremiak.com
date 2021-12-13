@@ -1,0 +1,5 @@
+.comma-after::after {
+  content: ',   ';
+  display: inline-block;
+  width: .35rem;
+}
