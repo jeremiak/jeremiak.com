@@ -1,0 +1,62 @@
+
+// Imports
+@import "variables";
+@import "basscss/basscss";
+@import "borders";
+@import "colors";
+@import "cursor";
+@import "display";
+@import "flex";
+@import "fonts";
+@import "height";
+@import "lists";
+@import "margin";
+@import "padding";
+@import "position";
+@import "viz";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+// these apply to general selectors so that they show up
+// consistently in the rendered markdown
+a:not(.no-style) {
+  background-color: $gold;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 3px;
+  color: $black;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  text-decoration: none;
+}
+
+@media print {
+  a {
+    padding: 0;
+    text-decoration: underline;
+  }
+}
+
+a:not(.no-style):hover {
+  background-color: transparent;
+  border-color: $gold;
+  border-style: dashed;
+}
+
+a.no-hover:hover {
+  background-color: transparent;
+  border-style: solid;
+  border-color: transparent;
+}
+
+blockquote {
+  background-color: $white;
+  border-left: 5px solid $gold;
+  padding: .1rem .5rem;
+}

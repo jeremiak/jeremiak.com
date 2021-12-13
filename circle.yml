@@ -1,6 +1,0 @@
-deployment:
-  prod:
-    branch: master
-    commands:
-      - bundle exec jekyll build
-      - aws s3 sync public/ s3://jeremiak-com/ --delete
