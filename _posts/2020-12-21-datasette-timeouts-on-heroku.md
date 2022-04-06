@@ -10,7 +10,7 @@ description: It isn't hard to configure, but I spent more than 15 minutes search
   <figcaption class="h6 italic">The error I saw on Heroku</figcaption>
 </figure>
 
-I'm using datasette for the [California municipal campaign finance project](/blog/california-municipal-campaign-finance/) and was saw the timeout errors when I was just sorting some columns. So I wanted to up the timeout limit from the default [of 1 second](https://docs.datasette.io/en/latest/settings.html#sql-time-limit-ms) to 4 seconds.
+I'm using datasette for the [California municipal campaign finance project](/blog/california-municipal-campaign-finance/) and saw the timeout errors when I was just sorting some columns. So I wanted to up the timeout limit from the default [of 1 second](https://docs.datasette.io/en/latest/settings.html#sql-time-limit-ms) to 4 seconds.
 
 Why 4 seconds? 🤷‍♂️ It's more than 1 and less than a lot?
 
