@@ -1,0 +1,21 @@
+---
+permalink: /blog/rss.xml
+---
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Jeremia's blog</title>
+        <link>{{ metadata.url }}</link>
+        <description>Free web building tutorials</description>
+        {% for post in collections.posts reversed %}
+        <item>
+            <title>{{ post.data.title }}</title>
+            <link>https://www.jeremiak.com{{ post.url }}</link>
+            <description>{{ post.templateContent }}</description>
+            <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
+            <guid>{{ post.url }}</guid>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>
