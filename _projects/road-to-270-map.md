@@ -1,7 +1,7 @@
 ---
 name: "Road to 270: Choose potential paths to a White House victory"
 href: https://www.nbcnews.com/specials/road-to-270-2020/
-order: 10
+order: 30
 ---
 
 <div class="flex flex-column md-flex-row justify-between">

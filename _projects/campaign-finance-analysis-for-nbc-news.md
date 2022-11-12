@@ -1,6 +1,6 @@
 ---
 name: Campaign finance analysis for NBC News
-order: 12
+order: 32
 ---
 
 I worked with the political reporters at NBC News to analyze FEC data to find trends and specific patterns. I wrote programs to allow us to look through large FEC datasets on a quick deadline and created graphics to accompany the stories.
