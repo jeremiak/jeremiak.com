@@ -3,7 +3,7 @@ name: Interactives about homelessness in California
 order: 17
 ---
 
-I worked with reporter <a href="">Manuela Tobias</a> 
+<!-- I worked with reporter <a href="">Manuela Tobias</a>  -->
 
 [Could this COVID program help reduce the California housing crisis?](https://calmatters.org/housing/2022/08/california-housing-crisis-emergency-vouchers/) (8/8/2021)
 

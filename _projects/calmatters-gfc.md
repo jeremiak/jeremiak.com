@@ -4,5 +4,5 @@ href: https://calmatters.org/politics/election-2022/2022/08/california-campaign-
 order: 19
 ---
 
-I worked with reporters <a href="">Ben Christopher</a> and <a>Alexei Kossoff</a>
+<!-- I worked with reporters <a href="">Ben Christopher</a> and <a>Alexei Kossoff</a> -->
 

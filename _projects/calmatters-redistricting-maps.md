@@ -3,9 +3,9 @@ name: Redistricting maps for CalMatters
 order: 15
 ---
 
-I worked with reporter <a href="https://twitter.com/SameeaKamal">Sameea Kamal</a> to create a series of maps that were used to illustrate one of the most confusing topics in elections: redistricting.
+I worked with reporter <a href="https://twitter.com/SameeaKamal">Sameea Kamal</a> to create a series of maps that were used to illustrate one of the most confusing topics in American elections: redistricting.
 
-I used animated maps to show change over time and chose focal areas that were both relevant to the story and had particularly interesting changes.
+We used animated maps to show change over time and chose focal areas that were both relevant to the story and had particularly interesting changes.
 
 [How will diverse voters be represented in California’s new election districts?](https://calmatters.org/politics/2021/10/california-redistricting-community-groups-diversity/) (10/14/2021)
 
