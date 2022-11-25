@@ -7,7 +7,6 @@ The California government requires state entities to submit record retention sch
 
 <style>
   details {
-    background-color: #ebebeb;
     margin-bottom: 1rem;
     padding: .4rem;
   }

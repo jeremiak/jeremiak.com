@@ -4,13 +4,21 @@ permalink: /projects/
 title: Work
 ---
 
+<style>
+    .project {
+        background: var(--content-bg-color);
+        color: var(--text-color);
+    }
+</style>
+
+
 <h1><span class="strike">Work</span> Projects & pieces</h1>
 
 <ul class="list-style-none p0">
 {% assign projects = collections.projects | byorder %}
 {% for project in projects %}
   {% unless project.data.hide %}
-    <li class="bg-white line-height-2 mb2 p1 sm-p2 pr-p0">
+    <li class="project line-height-2 mb2 p1 sm-p2 pr-p0">
       <p class="h3 m0">
         {% if project.data.href %}
           <a class="pr-p0" href="{{ project.data.href }}">{{ project.data.name }}</a>

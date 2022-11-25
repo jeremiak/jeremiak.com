@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      {% include head.html %}
-      <title>{{ title }}</title>
-    </head>
-    <body class="bg-yellow border border-gold border-10 col-12 mh100 m0 p1 sm-p2 md-px4 pr-border-none pr-bg-none pr-h-auto">
-      <nav class="flex max-width-3 mx-auto row-reverse pr-hide">
-        <ul class="flex flex-column sm-flex-row list-style-none m0 p0">
-          <li class="mb1 mr1"><a href="/">Home</a></li>
-          <li class="mb1 mr1"><a href="/blog">Blog</a></li>
-          <li><a href="/projects">Work</a></li>
-        </ul>
-      </nav>
-      <div class="max-width-3 mx-auto">
-        <main>
-          {{ content }}
-        </main>
-      </div>
-      <footer class="center">
 
-      </footer>
-      {% include javascript.html %}
-    </body>
+<head>
+    {% include head.html %}
+    <title>{{ title }}</title>
+    <style>
+        body {
+            --bg-color: #f9f5e0;
+            --border-color: gold;
+            --content-bg-color: white;
+            --table-zebra-bg-color: #eaeaea;
+            --text-color: #212121;
+            background-color: var(--bg-color);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+        
+        body.dark {
+            --bg-color: black;
+            --border-color: rgb(15, 143, 15);
+            --content-bg-color: #212121;
+            --table-zebra-bg-color: #2f2f2f;
+            --text-color: #ebebeb;
+        }
+        
+        #dark-mode-toggle {
+            background-color: transparent;
+            border: none;
+            margin-left: .5rem;
+        }
+        
+        #dark-mode-toggle:before {
+            content: '🌚';
+            display: inline-block;
+        }
+        
+        body.dark #dark-mode-toggle:before {
+            content: '🌞';
+        }
+    </style>
+</head>
+
+<body class="border border-10 col-12 mh100 m0 p1 sm-p2 md-px4 pr-border-none pr-bg-none pr-h-auto">
+    <nav class="flex max-width-3 mx-auto row-reverse pr-hide">
+        <ul class="flex flex-column sm-flex-row list-style-none m0 p0">
+            <li class="mb1 mr1"><a href="/">Home</a></li>
+            <li class="mb1 mr1"><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Work</a></li>
+            <li><button id="dark-mode-toggle"></button></li>
+        </ul>
+    </nav>
+    <div class="max-width-3 mx-auto">
+        <main>
+            {{ content }}
+        </main>
+    </div>
+    <footer class="center">
+
+    </footer>
+    <script>
+        const body = document.querySelector('body')
+        const toggle = document.querySelector('#dark-mode-toggle')
+
+        const isDarkMode = window.localStorage.getItem('is-dark-mode') === 'true'
+
+        if (isDarkMode) {
+            body.classList.add('dark')
+        }
+
+        toggle.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark')
+
+            if (isDark) {
+                body.classList.remove('dark')
+                window.localStorage.setItem('is-dark-mode', false)
+            } else {
+                body.classList.add('dark')
+                window.localStorage.setItem('is-dark-mode', true)
+            }
+        })
+    </script>
+    {% include javascript.html %}
+</body>
+
 </html>
