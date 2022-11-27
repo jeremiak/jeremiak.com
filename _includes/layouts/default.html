@@ -24,6 +24,21 @@
             --text-color: #ebebeb;
         }
         
+        .dark-mode-toggle-container {
+            position: absolute;
+            left: .25rem;
+            top: .5rem;
+        }
+        
+        @media screen and (min-width: 700px) {
+            .dark-mode-toggle-container {
+                left: auto;
+                margin-top: -4px;
+                position: relative;
+                top: auto;
+            }
+        }
+        
         #dark-mode-toggle {
             background-color: transparent;
             border: none;
@@ -47,7 +62,9 @@
             <li class="mb1 mr1"><a href="/">Home</a></li>
             <li class="mb1 mr1"><a href="/blog">Blog</a></li>
             <li><a href="/projects">Work</a></li>
-            <li><button id="dark-mode-toggle"></button></li>
+            <li class="dark-mode-toggle-container">
+                <button id="dark-mode-toggle"></button>
+            </li>
         </ul>
     </nav>
     <div class="max-width-3 mx-auto">
