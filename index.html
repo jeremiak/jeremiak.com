@@ -13,60 +13,63 @@ title: 👋🏻 - Jeremia on the internet
     <div class="col-12 line-height-2">
         <p>I really like making complicated ideas easier to understand with code and data, usually by building interactive visualizations and web scrapers.</p>
         <p>Sometimes I write in <a href="/blog">English</a>, but more frequently with <a href="https://github.com/jeremiak">Javascript</a>. Here are some <a href="/projects">projects and bylines</a> that I am proud of.</p>
-        <p>You can <span class="strike">almost always</span> sometimes find me running my mouth on the <a href="https://twitter.com/jeremiak">Twitter machine</a>.</p>
+        <p>You can <span class="strike">almost always</span> infrequently find me running my mouth on the <a href="https://twitter.com/jeremiak">Twitter machine</a>. More often <a rel="me" href="https://journa.host/@jeremiak">Mastodon</a> these days.</p>
         <p>Feel free to get in touch, I'd love to <a href="mailto:jbkimelman@gmail.com">hear from you</a>.</p>
     </div>
 </div>
 
 <style>
-  span.word {
-    white-space: nowrap;
-  }
-  span.char {
-    display: inline-block;
-    transition: all 1s ease-in-out;
-  }
-
-  span.char:hover {
-    transform-origin: 50% 50%;
-    transform: rotateY(180deg);
-  }
+    span.word {
+        white-space: nowrap;
+    }
+    
+    span.char {
+        display: inline-block;
+        transition: all 1s ease-in-out;
+    }
+    
+    span.char:hover {
+        transform-origin: 50% 50%;
+        transform: rotateY(180deg);
+    }
 </style>
 
 <script>
+    function getEnrichedChildNodeHTMLFromTextContent(text) {
+        const toInject = []
+        const words = text.split(' ')
+        words.forEach(word => {
+            const characters = word.split('')
+            const toBeWord = []
+            characters.forEach(character => {
+                toBeWord.push(`<span class="char">${character}</span>`)
+            })
 
-  function getEnrichedChildNodeHTMLFromTextContent(text) {
-    const toInject = []
-    const words = text.split(' ')
-    words.forEach(word => {
-      const characters = word.split('')
-      const toBeWord = []
-      characters.forEach(character => {
-        toBeWord.push(`<span class="char">${character}</span>`)
-      })
+            const w = `<span class="word">${toBeWord.join('')}</span>`
+            toInject.push(w)
+        })
 
-      const w = `<span class="word">${toBeWord.join('')}</span>`
-      toInject.push(w)
-    })
-
-    return toInject.join(' ')
-  }
+        return toInject.join(' ')
+    }
 
     const elements = document.querySelectorAll('h1, h2, p, #home-page-stop button')
     elements.forEach(element => {
-      const toBeText = []
+        const toBeText = []
 
-      element.childNodes.forEach(childNode => {
-        if (childNode.nodeName === '#text') {
-          const toInject = getEnrichedChildNodeHTMLFromTextContent(childNode.textContent)
-          toBeText.push(toInject)
-        } else if (childNode.nodeName === 'A') {
-          const href = childNode.getAttribute('href')
-          const toInject = getEnrichedChildNodeHTMLFromTextContent(childNode.textContent)
-          toBeText.push(`<a href="${href}">${toInject}</a>`)
-        }
-      })
+        element.childNodes.forEach(childNode => {
+            if (childNode.nodeName === '#text') {
+                const toInject = getEnrichedChildNodeHTMLFromTextContent(childNode.textContent)
+                toBeText.push(toInject)
+            } else if (childNode.nodeName === 'A') {
+                const href = childNode.getAttribute('href')
+                const toInject = getEnrichedChildNodeHTMLFromTextContent(childNode.textContent)
+                toBeText.push(`<a href="${href}">${toInject}</a>`)
+            } else if (childNode.nodeName === 'SPAN' && childNode.classList.contains('strike')) {
+                const toInject = getEnrichedChildNodeHTMLFromTextContent(childNode.textContent)
+                toBeText.push(`<span class="strike">${toInject}</span>`)
+            }
+        })
 
-      element.innerHTML = toBeText.join('')
+        element.innerHTML = toBeText.join('')
     })
 </script>
