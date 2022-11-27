@@ -1,44 +1,44 @@
 html {
-  font-size: $root;
+    font-size: $root;
 }
 
 .light {
-  font-weight: 100;
+    font-weight: 100;
 }
 
 .mono {
-  font-family: monospace;
+    font-family: monospace;
 }
 
 .sans {
-  font-family: $sans;
+    font-family: $sans;
 }
 
 .serif {
-  font-family: $serif;
+    font-family: $serif;
 }
 
 .strike {
-  position: relative;
+    position: relative;
 }
 
 .strike::before {
-  background-color: black;
-  content: ' ';
-  display: block;
-  height: .1em;
-  left: 0;
-  position: absolute;
-  top: calc(50% - .1em);
-  width: 100%;
+    background-color: var(--text-color);
+    content: ' ';
+    display: block;
+    height: .1em;
+    left: 0;
+    position: absolute;
+    top: calc(50% - .1em);
+    width: 100%;
 }
 
 .fs-14 {
-  font-size: 14pt;
+    font-size: 14pt;
 }
 
 @media print {
-  .pr-fs-12 {
-    font-size: 12pt !important;
-  }
+    .pr-fs-12 {
+        font-size: 12pt !important;
+    }
 }
