@@ -59,6 +59,18 @@ blockquote {
     padding: .1rem .5rem;
 }
 
+pre:has(code) {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: .9rem;
+    padding: 6px;
+}
+
+code {
+    white-space: break-spaces;
+    width: 100%;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -83,4 +95,18 @@ input {
 details {
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+figure p {
+    margin-bottom: .5rem;
+}
+
+figcaption {
+    font-size: .6rem;
+    padding-top: 0;
+    text-align: right;
 }
