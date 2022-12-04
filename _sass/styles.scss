@@ -110,3 +110,8 @@ figcaption {
     padding-top: 0;
     text-align: right;
 }
+
+fieldset {
+    border-color: var(--border-color);
+    border-style: solid;
+}
