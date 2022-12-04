@@ -7,34 +7,46 @@ The California Senate [provides audio and video recordings](https://www.senate.c
 
 Cool. But how good are the subtitles?
 
-In my opinion, not great. Sure it can help you understand a bunch of what was said in a hearing but it's not even close to sufficient if you are deaf or heavily rely on closed captioning to follow along with the activity of your representative government.
+Not great. Sure it can help you understand a bunch of what was said in a hearing but it's not even close to sufficient if you are deaf or heavily rely on closed captioning to follow along with the activity of your representative government.
 
-There are some minor spelling mistakes and some larger grammar mistakes that introduce confusion or at least distract. And they're displayed in really short phrases of just a few words, which in a long-winded legislative hearing make it difficult to follow complex thoughts. Frustratingly, the captions are in all caps which makes reading difficult and makes it hard to spot commonly used acronyms.
+In my view there are three major problems:
 
-Ok so they suck. What can we do beyond manually typing out each hearing? I hate to bring it up but... can AI help here?
+1. There are some minor spelling mistakes and some larger grammar mistakes that introduce confusion or at least distract.
+2. And they're displayed in really short phrases of just a few words, which can make it difficult to follow complex thoughts in a legislative hearing.
+3. Frustratingly, the captions are in all caps which makes reading difficult and makes it hard to spot commonly used acronyms.
+
+Ok so they <strike>suck</strike> leave a lot to be desired. What can we do beyond manually typing out each hearing? I hate to bring it up but can a robot have this job? Can AI help here?
 
 Frankly, I find the quality of contemporary artificial intelligence absolutely terrifying. But it's here and there's not much I can do about it. Maybe we can at least get better legislative hearing transcripts?
 
 There's a class of tools called "speech to text" that take audio/video of human language and generate a text version. Duh. A company called OpenAI released a speech to text tool named [Whisper](https://openai.com/blog/whisper/) and it's been getting rave reviews across my Twitter/Mastodon feeds. The idea is that you give it a video and out comes the transcript. Seems perfect for this experiment!
 
 So here's what we'll do:
-1. We'll find a hearing and run it through `whisper`
-2. And then we'll see how the generated closed captioning compares to the one offered by the state
+1. We'll find a hearing and run it through Whisper
+2. And then we'll see how the generated closed captioning compares to the set offered by the state
 
 I selected a recent California Senate hearing concerning an issue near and dear to my heart, the state's campaign finance disclosure system called [CAL-ACCESS](https://cal-access.sos.ca.gov/).
 
-Some real quick background on the hearing: the system was originally deployed in 2000 and in 2017 the legislature passed a bill to build a replacement system called the "**C**AL-**A**CCESS **R**eplacement **S**ystem" or "CARS". So far the state's spent at least $30 million dollars and has almost nothing to show for it. Things were apparently so bad that current Secretary of State Weber [scraped the project and started over in June 2021](https://www.sos.ca.gov/campaign-lobbying/cal-access-replacement-system-project-cars-updates/CARS-news-and-updates). Hence, the oversight hearing; which [I attemped to live tweet](https://twitter.com/jeremiak/status/1597643021738471424).
+Some real quick background on the hearing:
 
-I fed the video to the robot and it generated captions. I was heavily guided by [this blog post](https://www.assemblyai.com/blog/how-to-run-openais-whisper-speech-recognition-model/) and used the following steps:
+1. The system was originally deployed in 2000 and in 2017 the legislature passed a bill to build a replacement system called the "**C**AL-**A**CCESS **R**eplacement **S**ystem" or "CARS".
+2. So far the state's spent at least $30 million dollars and has almost nothing to show for it. Things were apparently so bad that current Secretary of State Weber [scraped the project and started over in June 2021](https://www.sos.ca.gov/campaign-lobbying/cal-access-replacement-system-project-cars-updates/CARS-news-and-updates).
+3. As of the hearing, CARS is not expected to be available to the public until at least 2026.
+   
+Hence, the oversight hearing - which [I attemped to live tweet](https://twitter.com/jeremiak/status/1597643021738471424).
+
+Anyway, I fed the video to the robot and it generated captions. I was heavily guided by [this blog post](https://www.assemblyai.com/blog/how-to-run-openais-whisper-speech-recognition-model/) and used the following steps:
 
 1. Installed `ffmpeg` and then used `pip` to install the `whisper` CLI
-2. Downloaded the video to `20221129_Elections.mp4`
-3. Ran the tool, as simple as `whisper 20221129_Elections.mp4`. This part took _a long time_. On my regular, non-M1 Macbook Pro it took well over twelve hours.
+2. Downloaded the video as `hearing.mp4`
+3. Ran the tool `whisper hearing.mp4`. This part took _a long time_. On my Intel chip Macbook Pro it took well over twelve hours.
 4. Convert the output to WebVTT using [this Observable notebook](https://observablehq.com/@calmatters/whisper-ai-output-to-webvtt)
 
-And the result was surprising! Surprisingly good that is, you can check it out for yourself. And please do because I'm not a person who regularly uses assistive technology so I'm unclear if these new captions will be better in all circumstances for all viewers. If you do frequently use assistive technology I'd love to hear your take!
+The result was surprising! Surprisingly good, that is. You can check it out for yourself below.
 
-Here's the hearing, toggle back and forth between the different closed captioning sources to see the difference:
+And please do because I'm not a person who regularly uses assistive technology so I'm unclear if these new captions will be better in all circumstances. If you do frequently use assistive technology I'd love to hear your take!
+
+Here's the hearing, toggle back and forth between the closed captioning sources to see the difference:
 
 <fieldset class="hide">
   <legend>Closed captioning source for the video</legend>
@@ -119,7 +131,6 @@ Do you have any experience working with speech to text tools? Are you a person w
   const form = document.querySelector('fieldset')
   const video = document.querySelector('video')
   const textTracks = video.textTracks
-
   const caGovTrack = textTracks[0]
   const whisperTrack = textTracks[1]
 
