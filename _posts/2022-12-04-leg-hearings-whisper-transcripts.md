@@ -33,7 +33,7 @@ Some real quick background on the hearing:
    
 Hence, the oversight hearing - which [I attemped to live tweet](https://twitter.com/jeremiak/status/1597643021738471424).
 
-Anyway, I fed the video to the robot and it generated captions. This part took _a long time_, like over 24 hours on my Intel chip Macbook Pro. In fact, at the time this post was first published only 1 hour and fifty four minutes had been transcribed of the 2 hour and 4 minute long hearing. I think that's enough to make the point.
+Anyway, I fed the video to the robot and it generated captions. This part took _a long time_, like over 24 hours on my Intel chip Macbook Pro.
 
 And the result was surprising! Surprisingly good, that is. You can check it out for yourself below.
 
