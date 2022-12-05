@@ -29,7 +29,7 @@ I selected a recent California Senate hearing concerning an issue near and dear 
 
 Some real quick background on the hearing:
 
-1. The system was originally deployed in 2000 and in 2017 the legislature passed a bill to build a replacement system called the "**C**AL-**A**CCESS **R**eplacement **S**ystem" or "CARS".
+1. The system was originally deployed in 2000 and in 2017 the legislature passed a bill to build a replacement system called the "**C**AL-**A**CCESS **R**eplacement **S**ystem" or "CARS". Cars... yuck.
 2. So far the state's spent at least $30 million dollars and has almost nothing to show for it. Things were apparently so bad that current Secretary of State Weber [scraped the project and started over in June 2021](https://www.sos.ca.gov/campaign-lobbying/cal-access-replacement-system-project-cars-updates/CARS-news-and-updates).
 3. As of the hearing, CARS is not expected to be available to the public until at least 2026.
    
@@ -39,7 +39,7 @@ Anyway, I fed the video to the robot and it generated captions. I was heavily gu
 
 1. Installed `ffmpeg` and then used `pip` to install the `whisper` CLI
 2. Downloaded the video as `hearing.mp4`
-3. Ran the tool `whisper hearing.mp4`. This part took _a long time_. On my Intel chip Macbook Pro it took well over twelve hours.
+3. Ran the tool `whisper hearing.mp4`. This part took _a long time_. On my Intel chip Macbook Pro it took over 24 hours.
 4. Convert the output to WebVTT using [this Observable notebook](https://observablehq.com/@calmatters/whisper-ai-output-to-webvtt)
 
 The result was surprising! Surprisingly good, that is. You can check it out for yourself below.
