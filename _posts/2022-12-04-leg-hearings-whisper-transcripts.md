@@ -40,7 +40,7 @@ Anyway, I fed the video to the robot and it generated captions. I was heavily gu
 1. Installed `ffmpeg` and then used `pip` to install the `whisper` CLI
 2. Downloaded the video as `hearing.mp4`
 3. Ran the tool `whisper hearing.mp4`. This part took _a long time_. On my Intel chip Macbook Pro it took over 24 hours. In fact, at the time this post was first published only 1 hour and fifty four minutes of the 2 hour and 4 minute long hearing - but that's enough to make the point.
-4. Convert the output to WebVTT using [this Observable notebook](https://observablehq.com/@calmatters/whisper-ai-output-to-webvtt)
+4. Convert the output to WebVTT using [this Observable notebook](https://observablehq.com/@jeremiak/whisper-ai-output-to-webvtt)`
 
 The result was surprising! Surprisingly good, that is. You can check it out for yourself below.
 
