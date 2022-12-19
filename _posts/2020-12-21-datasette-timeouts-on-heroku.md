@@ -16,7 +16,7 @@ Why 4 seconds? 🤷‍♂️ It's more than 1 and less than a lot?
 
 The documentation is very clear about how to do this when running `datasette` locally:
 
-```
+```sh
 datasette mydatabase.db --setting sql_time_limit_ms 4000
 ```
 
@@ -24,7 +24,7 @@ The documentation is less clear about how you might combine that setting with th
 
 I successfully increased the timeout on Heroku with:
 
-```
+```sh
 datasette publish heroku \
   --name $HEROKU_APP_NAME \
   --extra-options \"--setting sql_time_limit_ms 4000\" \
