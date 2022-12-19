@@ -29,7 +29,7 @@ I am focused on California so I added nine references GCPs that are easy to iden
 
 With my set of reference points I leveraged another open source package called `gdal` to combine the raster image and reference points into a GeoTIFF image, which is a raster image that also has geospatial data. In this case I used `gdal_translate`:
 
-```
+```sh
 gdal_translate -of GTiff \
   -gcp 233.635 318.095 -109.04 36.995 \
   -gcp 146.048 341.81 -114.633 35.0019 \
@@ -46,7 +46,7 @@ gdal_translate -of GTiff \
 
 And then the next step reprojected the image into WGS84.
 
-```
+```sh
 gdalwarp -r near \
   -tps \
   -co COMPRESS=NONE \
@@ -67,7 +67,7 @@ I, still, cannot get over how powerful `gdal` is. It's a toolbelt with all these
 
 Take `gdal_polygonize.py`, which can do _all_ of step 1 for me. At the end of this I had three files, one for each color band.
 
-```
+```sh
 gdal_polygonize.py 10-hour-fuel-moisture-warped.tif \
   -b 1 \
   -f GeoJSON polygon-1.json
@@ -83,7 +83,7 @@ gdal_polygonize.py 10-hour-fuel-moisture-warped.tif \
 
 And then I used `mapshaper` to clip out all the data that isn't in California. This whole approach _should_ be generalizable to the whole country but that's more work and I'm focused on just my home state.
 
-```
+```sh
 npx mapshaper -i polygon-1.json \
   -clip California.json \
   -o polygon-1-clipped.json
@@ -109,7 +109,7 @@ I needed to find the polygons that represent intersections of all three files - 
 
 And then I ran it. After all, what else are scripts for?
 
-```
+```sh
 node determine-rgb-values-for-polygons.mjs
 ```
 
