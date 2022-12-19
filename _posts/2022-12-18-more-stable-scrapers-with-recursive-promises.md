@@ -1,5 +1,5 @@
 ---
-title: A promise lasts forever
+title: Promises for more stability
 description: Javascript Promises make it easy to add retry behavior to web scrapers
 ---
 
