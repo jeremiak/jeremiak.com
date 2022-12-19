@@ -1,6 +1,6 @@
 ---
 title: Promises for more stability
-description: Javascript Promises make it easy to add retry behavior to web scrapers
+description: Javascript Promises make it easy to add retry behavior to web scrapers so they crash less
 ---
 
 If you build enough web scrapers you’ll run into a situation where you have hundreds or thousands of URLs to churn through but the scraper breaks after hour 4 on page 1,387 because the request bailed for some reason and you didn’t catch the error. It’s a bummer, especially since it usually crushes that wonderful feeling of watching a robot do something repetitive on your behalf. _Sigh_.
