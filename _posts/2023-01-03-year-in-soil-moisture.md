@@ -11,7 +11,7 @@ Here's the animated GIF, by the way:
 
 <div style="display: flex; justify-content: center;">
 
-![TK](/img/year-in-soil-moisture/soil-moisture-mm-daily.gif)
+![An animated amp of the lower 48 US states where each frame is a sequential day in 2022, starting with Jan 17, 2022 and ending on January 2, 2023.](/img/year-in-soil-moisture/soil-moisture-mm-daily.gif)
 
 </div>
 
