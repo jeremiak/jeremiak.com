@@ -17,7 +17,7 @@ Here's the animated GIF, by the way:
 
 The scraper puts all of the [images in a single directory](https://github.com/jeremiak/noaa-cpc-map-scraper/tree/main/images) and names them in the format of `YYYY-MM-DD-soil-moisture-mm-daily.gif`. Even though it has a `.gif` file extension these source images aren't animated at all. I'm just choosing to keep the source file extension used by NOAA.
 
-I ran a single line `convert` command from within the images directory and out came the animated GIF you see above.
+I ran the `convert` command installed by [ImageMagick](https://imagemagick.org/script/convert.php) from within the images directory and out came the animated GIF you see above.
 
 ```sh
 convert -loop 0 *-soil-moisture-mm-daily.gif soil-moisture-mm-daily.gif
