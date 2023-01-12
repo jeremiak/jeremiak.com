@@ -1,6 +1,6 @@
 ---
 title: How to turn a directory full of images into an animated GIF
-description: I used <code>convert</code> and a git scraper to look at 2022's soil moisture 
+description: I used ImageMagick and a git scraper to look at 2022's soil moisture 
 ---
 
 It's been raining a lot here in Sacramento and soil moisture is something people are talking to each other about. It's weird. And wet.
