@@ -1,6 +1,7 @@
 ---
 title: Extracting California fuel moisture data from Forest Service rasters
 description: Using open source Python and Javascript tools to extract data out of raster images and into GeoJSON files
+prism: true
 ---
 
 The US Forest Service has a way of measuring dead fuel moisture across the country, which is an important input in the complicated equations to better understand wildfire behavior. They publish it as a raster image but I want machine-readable, geospatial data. Bummer.
