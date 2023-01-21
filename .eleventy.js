@@ -46,6 +46,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("byorder", sortByOrder);
     eleventyConfig.addFilter("dateToRfc822", dateToRfc822)
     eleventyConfig.addFilter("safe", encodeForHtml);
+    eleventyConfig.addFilter("striptags", striptags)
 
     eleventyConfig.addPassthroughCopy("data");
     eleventyConfig.addPassthroughCopy("img");
