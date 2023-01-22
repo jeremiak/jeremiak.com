@@ -1,6 +1,6 @@
 ---
 title: How to turn a directory full of images into an animated GIF
-description: I used ImageMagick and a git scraper to look at 2022's soil moisture
+description: I used ImageMagick and a a daily image published by NOAA to look at 2022's soil moisture.
 prism: true
 ---
 

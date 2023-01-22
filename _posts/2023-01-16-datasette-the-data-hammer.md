@@ -1,5 +1,6 @@
 ---
 title: Datasette is my data hammer
+description: If you're exploring or publishing data, you should give this open source tool a go.
 ---
 
 > "When all you have is a hammer, everything looks a nail"

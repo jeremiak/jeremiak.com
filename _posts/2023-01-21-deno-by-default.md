@@ -1,6 +1,6 @@
 ---
 title: Deno by default in 2023?
-description: For the last 8 years I have been a nearly daily user of <a href="https://nodejs.org/">Node</a> but <a href="https://deno.land/">Deno</a> seems really neat and I want to use it more this year
+description: For the last 8 years I have been a nearly daily user of <a href="https://nodejs.org/">Node</a> but <a href="https://deno.land/">Deno</a> seems really neat and I want to use it more this year.
 prism: true
 ---
 
