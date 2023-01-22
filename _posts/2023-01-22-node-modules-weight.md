@@ -1,6 +1,6 @@
 ---
 title: Heavyweight dependencies
-description: A one-liner to tell you how much space all of your <code>node_modules</code> are taking up across your codebases - I've got gigabytes
+description: A one-liner to tell you how much space all of your <code>node_modules</code> are taking up across your codebases - I've got gigabytes.
 prism: true
 ---
 
