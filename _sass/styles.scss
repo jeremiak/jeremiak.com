@@ -57,7 +57,17 @@ blockquote {
     background-color: var(--bg-color);
     color: var(--text-color);
     border-left: 5px solid var(--border-color);
+    margin-left: 0;
+    margin-right: 0;
     padding: .1rem .5rem;
+}
+
+@media screen and (min-width: 700px) {
+    blockquote {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 pre:has(code) {
@@ -115,4 +125,13 @@ figcaption {
 fieldset {
     border-color: var(--border-color);
     border-style: solid;
+}
+
+li {
+    margin-bottom: .8rem;
+}
+
+p,
+li {
+    line-height: 1.25em;
 }
