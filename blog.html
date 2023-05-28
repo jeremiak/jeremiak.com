@@ -19,32 +19,35 @@ description: My blog posts
         background-color: var(--content-bg-color);
         border: 1px solid var(--text-color);
         border-bottom: none;
+        margin-top: 0;
         padding: .5rem;
+        position: absolute;
         right: -1px;
-        top: -3.16rem;
-    }
-
-    @media screen and (min-width: 650px) {
-        .post-date {
-            top: -2.15rem;
-        }
+        top: calc(-1 * calc(1em + 1rem + 8px ));
     }
 </style>
 
 <ul class="list-style-none p0">
     {% for post in collections.posts reversed %}
     <li class="post line-height-2 mb2 p1 sm-p2 pr-p0 relative">
-        <div class="flex flex-column sm-flex-row space-between">
-            <p class="h3 m0"><a class="pr-p0" href="{{ post.url }}">{{ post.data.title }}</a></p>
+        <p class="post-date m0 sm-mt0 italic">
+            {{ post.date | date: '%B %d, %Y'}}
+        </p>
+        <div class="post-title">
+            <p class="h3 m0">
+                <a class="pr-p0" href="{{ post.url }}">
+                    {{ post.data.title }}
+                </a>
+            </p>
         </div>
-        <p class="post-date absolute m0 mt2 sm-mt0 italic">{{ post.date | date: '%B %d, %Y'}}</p>
         {% if post.data.description %}
-        <p class="post-description">{{ post.data.description }}</p>
+            <p class="post-description">
+                {{ post.data.description }}
+            </p>
         {% else %}
-        <p class="post-excerpt">{% excerpt post %}</p>
-        <!-- <p class="right-align mb0">
-            <a class="pr-p0" href="{{ post.url }}">Read more...</a>
-        </p> -->
+            <p class="post-excerpt">
+                {% excerpt post %}
+            </p>
         {% endif %}
     </li>
     {% endfor %}
