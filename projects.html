@@ -7,7 +7,8 @@ title: Work
 <style>
     .project {
         background: var(--content-bg-color);
-        border: 1px solid #212121;
+        border: 1px solid var(--text-color);
+        box-shadow: .25rem .25rem var(--border-color);
         color: var(--text-color);
     }
 </style>
@@ -19,7 +20,7 @@ title: Work
 {% assign projects = collections.projects | byorder %}
 {% for project in projects %}
   {% unless project.data.hide %}
-    <li class="project line-height-2 mb2 p1 sm-p2 pr-p0">
+    <li class="project line-height-2 mb3 p1 sm-p2 pr-p0">
       <p class="h3 m0">
         {% if project.data.href %}
           <a class="pr-p0" href="{{ project.data.href }}">{{ project.data.name }}</a>

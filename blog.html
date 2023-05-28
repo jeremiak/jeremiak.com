@@ -11,6 +11,7 @@ description: My blog posts
     .post {
         background: var(--content-bg-color);
         border: 1px solid var(--text-color);
+        box-shadow: .25rem .25rem var(--border-color);
         color: var(--text-color);
         margin-top: 3rem;
         z-index: 10;
@@ -24,12 +25,13 @@ description: My blog posts
         position: absolute;
         right: -1px;
         top: calc(-1 * calc(1em + 1rem + 8px ));
+        z-index: 0;
     }
 </style>
 
 <ul class="list-style-none p0">
     {% for post in collections.posts reversed %}
-    <li class="post line-height-2 mb2 p1 sm-p2 pr-p0 relative">
+    <li class="post line-height-2 mb4 p1 sm-p2 pr-p0 relative">
         <p class="post-date m0 sm-mt0 italic">
             {{ post.date | date: '%B %d, %Y'}}
         </p>
