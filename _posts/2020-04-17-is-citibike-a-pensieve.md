@@ -1,5 +1,5 @@
 ---
-title: Is Citibike a Pensieve?
+title: Is Citibike a pensieve?
 description: Sometimes, reliving your memories is only a map or two away.
 ---
 
