@@ -7,4 +7,4 @@ order: 11
 
 [This law should reveal who’s paying for California legislators’ travel. It’s only been used twice](https://calmatters.org/politics/2023/05/california-legislators-travel-disclosure/) (5/18/2021)
 
-[Cleaned and published dataset](https://github.com/CalMatters/ca-form-700-data)
+The [cleaned and published dataset](https://github.com/CalMatters/ca-form-700-data)
