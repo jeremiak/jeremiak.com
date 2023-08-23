@@ -1,9 +1,9 @@
 ---
-title: "Dear BitWarden: WTF is this?"
+title: "Dear Bitwarden: WTF is this?"
 description: My password manager won't stop asking me for my account password and it's weirding me out.
 ---
 
-I like BitWarden - it works very well most of the time. It makes it easy-ish to share passwords with my partner and to have access across all of my devices. I feel more secure when I use it.
+I like Bitwarden - it works very well most of the time. It makes it easy-ish to share passwords with my partner and to have access across all of my devices. I feel more secure when I use it.
 
 But it keeps asking me for permission to install some "helper" but no description of what that new bit of code does or why it needs my password, an admin password for my machine.
 
@@ -19,7 +19,7 @@ But it keeps asking me for permission to install some "helper" but no descriptio
 
 It reminds me of something that has long sucked on the web: permission requests. Most of the time web users see a website request some permission it's some shady "news" website asking for the ability to send notifications or get the user's location. With absolutely no explanation why.
 
-BitWarden, I trust you. You've got all my passwords after all. But this kind of shoddy app experience makes me think twice.
+Bitwarden, I trust you. You've got all my passwords after all. But this kind of shoddy app experience bothers the heck out of me.
 
 <style>
   figure img {
