@@ -135,3 +135,8 @@ p,
 li {
     line-height: 1.25em;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .45s;
+}
