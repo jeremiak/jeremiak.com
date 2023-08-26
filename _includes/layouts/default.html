@@ -43,6 +43,7 @@
         #dark-mode-toggle {
             background-color: transparent;
             border: none;
+            cursor: pointer;
             margin-left: .5rem;
         }
         
@@ -86,7 +87,7 @@
             body.classList.add('dark')
         }
 
-        toggle.addEventListener('click', () => {
+        function toggleFn() {
             const isDark = body.classList.contains('dark')
 
             if (isDark) {
@@ -96,6 +97,15 @@
                 body.classList.add('dark')
                 window.localStorage.setItem('is-dark-mode', true)
             }
+        }
+
+        toggle.addEventListener('click', () => {
+            if (document.startViewTransition) {
+                document.startViewTransition(() => toggleFn())
+            } else {
+                toggleFn()
+            }
+            
         })
     </script>
 </body>
