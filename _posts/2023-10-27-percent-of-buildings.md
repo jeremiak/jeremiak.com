@@ -4,7 +4,7 @@ description: An attempt to think about the level of destruction in Gaza right no
 prism: true
 ---
 
-I'll be honest: the last few weeks have been rough. For me, for the world, for the people in Palestine and Israel. Way worse than what I'm going through. Obviously.
+I'll be honest - the last few weeks have been rough. For me, for the world, for the people in Palestine and Israel. Way worse than what I'm going through. Obviously.
 
 There's been dead babies. And subsequent news cycles about how those babies died and who lied about it. And then a hospital got bombed and even more people died. And then news cycles about who did it but not about helping the people who survived it or who's families were shattered as a result.
 
@@ -20,13 +20,13 @@ But I do know a few American cities pretty well, the ones I've lived in at least
 
 Since I use data visualization to better understand the world all the time, I figured I could try and use it to see what would it look like if 42% of the buildings in those cities were gone.
 
-<strong>Fuck.</strong>
+My reaction: <strong>Fuck.</strong>
 
 Here's all the buildings in the parts of Sacramento I'm most familiar with and what it looks like when those buildings are removed. In case it wasn't apparent, I'm not a government or international agency so I don't have information about which buildings are residential and which aren't.
 
 Instead I just made an assumption that residential buildings are smaller than commerical or industrial ones so any building with a footprint smaller than 10,000 square meters is "residential" for my purposes.
 
-It goes without saying, but I'll say it, that this is not what it would actually look like. It's a visualization - it's sanitized, normalized along the horror axis. But it helps me. I guess.
+It goes without saying, but I'll say it, that this is not what it would actually look like. It's a visualization, sanitized and normalized along the horror axis. But it helps me. I guess.
 
 Ceasefire now!
 
@@ -39,7 +39,7 @@ Ceasefire now!
 <h2>San Francisco</h2>
 <div id="sf-map" style="height: 500px;"></div>
 
-<details open>
+<details>
   <summary>How I made it</summary>
   <div>
     <ol>
@@ -49,7 +49,7 @@ Ceasefire now!
         <pre><code class="language-sh">mapshaper-xl 15gb -i California.geojson -clip bbox=-121.573505,38.537022,-121.406479,38.622772 -o format=geojson sacramento-clipped.json</code></pre>
       </li>
       <li>
-        After that, I generated a new GeoJSON file that has a <code>removed</code> attribute set to <code>true</code> or <code>false</code> using a script.
+        After that, I generated a new GeoJSON file that has a <code>removed</code> attribute set to <code>true</code> or <code>false</code> using a script. This variable determines if the building fades in and out or doesn't animate at all.
 <pre><code class="language-js">import { promises as fs } from 'fs'
 import area from '@turf/area'
 import sacramento from './sacramento-clipped.json' assert { type: 'json' }
