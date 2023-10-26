@@ -28,7 +28,7 @@ const map = window.map = new maplibregl.Map({
         "source-layer": "sacramentopost",
         "type": "fill",
         "paint": {
-          "fill-color": "steelblue",
+          "fill-color": "#3d3d3d",
           "fill-opacity": 1,
         },
         "filter": ["==", ["get", "removed"], true],
@@ -39,7 +39,7 @@ const map = window.map = new maplibregl.Map({
         "source-layer": "sacramentopost",
         "type": "fill",
         "paint": {
-          "fill-color": "steelblue",
+          "fill-color": "#3d3d3d",
         },
         "filter": ["==", ["get", "removed"], false],
       },
