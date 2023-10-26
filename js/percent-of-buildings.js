@@ -9,9 +9,9 @@ const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
 
 const map = window.map = new maplibregl.Map({
-  container: "sacramento-map",
-  zoom: 11.8,
-  center: [-121.45412, 38.57809],
+  container: "sac-map",
+  zoom: 12.68,
+  center: [-121.47833458667179, 38.57466095849159],
   style: {
     version: 8,
     sources: {
@@ -51,7 +51,16 @@ const map = window.map = new maplibregl.Map({
   },
 });
 
-map.setMaxBounds([[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]])
+map.setMaxBounds({
+  "_sw": {
+    "lng": -121.5402508655722,
+    "lat": 38.55375726273084
+  },
+  "_ne": {
+    "lng": -121.41641830777107,
+    "lat": 38.59555857341206
+  }
+})
 
 setInterval(() => {
   const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");

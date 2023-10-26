@@ -22,7 +22,13 @@ Since I use data visualization to better understand the world all the time, I fi
 Here's all the buildings in the parts of Sacramento I'm most familiar with and what it looks like when those buildings are removed. Of course, this is not what it would actually look like. It's a visualization, it's sanitized, normalized along the horror axis. But it helps me. I guess.
 
 <h2>Sacramento</h2>
-<div id="sacramento-map" style="height: 500px;"></div>
+<div id="sac-map" style="height: 500px;"></div>
+
+<h2>New York</h2>
+<div id="nyc-map" style="height: 500px;"></div>
+
+<h2>San Francisco</h2>
+<div id="sf-map" style="height: 500px;"></div>
 
 <details>
   <summary>How I made it</summary>
