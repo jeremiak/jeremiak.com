@@ -1,5 +1,5 @@
 ---
-title: What does it look like if 42% of the residential buildings are gone?
+title: What would it look like if 42% of the residential buildings in my city were gone?
 description: An attempt to even begin to think about the level of destruction in Gaza right now with maps
 ---
 
