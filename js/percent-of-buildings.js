@@ -1,7 +1,7 @@
 let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
-let PMTILES_URL = "/data/percent-of-buildings/sacramento-post.pmtiles";
+let PMTILES_URL = "https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles"
 
 const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
