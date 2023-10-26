@@ -53,6 +53,6 @@ const map = window.map = new maplibregl.Map({
 
 setInterval(() => {
   const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
-  const next = current === 0 ? 1 : 0;
+  const next = current === .15 ? 1 : .15;
   map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
 }, transitionLengthMs);
