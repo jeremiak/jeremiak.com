@@ -10,6 +10,7 @@ protocol.add(p);
 
 const map = window.map = new maplibregl.Map({
   container: "sacramento-map",
+  bounds: [[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]],
   maxBounds: [[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]],
   style: {
     version: 8,
