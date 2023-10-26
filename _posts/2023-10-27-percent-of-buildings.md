@@ -27,7 +27,21 @@ Here's all the buildings in the parts of Sacramento I'm most familiar with and w
 <details>
   <summary>How I made it</summary>
   <div>
-
+    <ol>
+      <li>Download the building footprints from Microsoft</li>
+      <li>
+        Use Mapshaper to clip the GeoJSON to a much smaller size for each city. Sacramento for example:
+        <code>
+mapshaper-xl 15gb -i California.geojson -clip bbox=-121.573505,38.537022,-121.406479,38.622772 -o format=geojson sacramento.json
+        </code>
+      </li>
+      <li>
+        Generate a new GeoJSON file that has a <code>removed</code> attribute set to <code>true</code> or <code>false</code>.
+      </li>
+      <li>
+        Use <code>tippecanoe</code> to generate PMtiles which are super easy to host and use
+      </li>
+    </ol>
   </div>
 </details>
 
