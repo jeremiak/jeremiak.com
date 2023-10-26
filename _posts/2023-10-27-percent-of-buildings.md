@@ -36,7 +36,7 @@ Ceasefire now!
 <h2>San Francisco</h2>
 <div id="san-francisco-map" style="height: 500px;"></div>
 
-<details>
+<details style="margin-top: 1rem;">
   <summary>How I made it</summary>
   <div>
     <ol>
