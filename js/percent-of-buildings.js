@@ -29,7 +29,7 @@ const maps = cities.map((city) => {
   protocol.add(p);
 
   const map = new maplibregl.Map({
-    container: `${city}-map`,
+    container: `${city.id}-map`,
     zoom: city.zoom,
     center: city.center,
     style: {
