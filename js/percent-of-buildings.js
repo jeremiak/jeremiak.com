@@ -9,9 +9,8 @@ const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
 
 const map = window.map = new maplibregl.Map({
-  container: "map",
-  zoom: 11.8,
-  center: [-121.45412, 38.57809],
+  container: "sacramento-map",
+  bounds: [[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]],
   style: {
     version: 8,
     sources: {
