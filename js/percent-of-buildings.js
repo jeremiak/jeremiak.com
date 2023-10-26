@@ -51,11 +51,33 @@ const map = window.map = new maplibregl.Map({
   },
 });
 
-
-map.setMaxBounds([[-121.5402508655722,38.55375726273084], [-121.41641830777107,38.59555857341206]])
+map.setMaxBounds([[-121.5402508655722, 38.55375726273084], [
+  -121.41641830777107,
+  38.59555857341206,
+]]);
 
 setInterval(() => {
   const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
   const next = current === .15 ? 1 : .15;
   map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
 }, transitionLengthMs);
+
+const observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    if (mutation.type === "attributes") {
+      const isDark = mutation.target.classList.contains("dark");
+
+      if (isDark) {
+        map.setPaintProperty("buildings-always", "fill-color", "#ffffff");
+        map.setPaintProperty("buildings-sometimes", "fill-color", "#ffffff");
+      } else {
+        map.setPaintProperty("buildings-always", "fill-color", "#3d3d3d");
+        map.setPaintProperty("buildings-sometimes", "fill-color", "#3d3d3d");
+      }
+    }
+  });
+});
+
+observer.observe(document.body, {
+  attributes: true,
+});
