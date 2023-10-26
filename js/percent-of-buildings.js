@@ -1,65 +1,89 @@
-let protocol = new pmtiles.Protocol();
+const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
-
-const PMTILES_URL =
-  "https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles";
-
 const transitionLengthMs = 2300;
-const p = new pmtiles.PMTiles(PMTILES_URL);
-protocol.add(p);
-
-const map = window.map = new maplibregl.Map({
-  container: "sac-map",
-  zoom: 12.68,
-  center: [-121.47833458667179, 38.57466095849159],
-  style: {
-    version: 8,
-    sources: {
-      "buildings": {
-        type: "vector",
-        url: "pmtiles://" + PMTILES_URL,
-        attribution: "© Microsoft",
-      },
-    },
-    layers: [
-      {
-        "id": "buildings-sometimes",
-        "source": "buildings",
-        "source-layer": "sacramentopost",
-        "type": "fill",
-        "paint": {
-          "fill-color": "#3d3d3d",
-          "fill-opacity": 1,
-        },
-        "filter": ["==", ["get", "removed"], true],
-      },
-      {
-        "id": "buildings-always",
-        "source": "buildings",
-        "source-layer": "sacramentopost",
-        "type": "fill",
-        "paint": {
-          "fill-color": "#3d3d3d",
-        },
-        "filter": ["==", ["get", "removed"], false],
-      },
-    ],
-    transition: {
-      duration: transitionLengthMs - 50,
-      delay: 0,
-    },
+const cities = [
+  {
+    id: "sacramento",
+    center: [-121.47833458667179, 38.57466095849159],
+    maxBounds: [[-121.5402508655722, 38.55375726273084], [
+      -121.41641830777107,
+      38.59555857341206,
+    ]],
+    zoom: 12.68,
   },
+  {
+    id: "san-francisco",
+    center: [-122.44352561124965, 37.76740173449599],
+    maxBounds: [
+      [-122.536011, 37.701207],
+      [-122.362976, 37.816293],
+    ],
+    zoom: 10,
+  },
+];
+
+const maps = cities.map((city) => {
+  const url =
+    `https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/${city.id}.pmtiles`;
+  const p = new pmtiles.PMTiles(url);
+  protocol.add(p);
+
+  const map = new maplibregl.Map({
+    container: `${city}-map`,
+    zoom: city.zoom,
+    center: city.center,
+    style: {
+      version: 8,
+      sources: {
+        "buildings": {
+          type: "vector",
+          url: "pmtiles://" + url,
+          attribution: "© Microsoft",
+        },
+      },
+      layers: [
+        {
+          "id": "buildings-sometimes",
+          "source": "buildings",
+          "source-layer": city,
+          "type": "fill",
+          "paint": {
+            "fill-color": "#3d3d3d",
+            "fill-opacity": 1,
+          },
+          "filter": ["==", ["get", "removed"], true],
+        },
+        {
+          "id": "buildings-always",
+          "source": "buildings",
+          "source-layer": city,
+          "type": "fill",
+          "paint": {
+            "fill-color": "#3d3d3d",
+          },
+          "filter": ["==", ["get", "removed"], false],
+        },
+      ],
+      transition: {
+        duration: transitionLengthMs - 50,
+        delay: 0,
+      },
+    },
+  });
+
+  map.setMaxBounds(city.maxBounds);
+  return map;
 });
 
-map.setMaxBounds([[-121.5402508655722, 38.55375726273084], [
-  -121.41641830777107,
-  38.59555857341206,
-]]);
-
 setInterval(() => {
-  const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
+  const current = maps[0].getPaintProperty(
+    "buildings-sometimes",
+    "fill-opacity",
+  );
   const next = current === .15 ? 1 : .15;
-  map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
+  maps.forEach((map) => {
+    map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
+  });
 }, transitionLengthMs);
 
 const observer = new MutationObserver(function (mutations) {
@@ -68,11 +92,15 @@ const observer = new MutationObserver(function (mutations) {
       const isDark = mutation.target.classList.contains("dark");
 
       if (isDark) {
-        map.setPaintProperty("buildings-always", "fill-color", "#ffffff");
-        map.setPaintProperty("buildings-sometimes", "fill-color", "#ffffff");
+        maps.forEach((map) => {
+          map.setPaintProperty("buildings-always", "fill-color", "#ffffff");
+          map.setPaintProperty("buildings-sometimes", "fill-color", "#ffffff");
+        });
       } else {
-        map.setPaintProperty("buildings-always", "fill-color", "#3d3d3d");
-        map.setPaintProperty("buildings-sometimes", "fill-color", "#3d3d3d");
+        maps.forEach((map) => {
+          map.setPaintProperty("buildings-always", "fill-color", "#3d3d3d");
+          map.setPaintProperty("buildings-sometimes", "fill-color", "#3d3d3d");
+        });
       }
     }
   });

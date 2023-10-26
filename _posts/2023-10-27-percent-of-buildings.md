@@ -31,13 +31,10 @@ It goes without saying, but I'll say it, that this is not what it would actually
 Ceasefire now!
 
 <h2>Sacramento</h2>
-<div id="sac-map" style="height: 500px;"></div>
-
-<h2>New York</h2>
-<div id="nyc-map" style="height: 500px;"></div>
+<div id="sacramento-map" style="height: 500px;"></div>
 
 <h2>San Francisco</h2>
-<div id="sf-map" style="height: 500px;"></div>
+<div id="san-francisco-map" style="height: 500px;"></div>
 
 <details>
   <summary>How I made it</summary>
