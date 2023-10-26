@@ -6,9 +6,9 @@ const PMTILES_URL = "https://deploy-preview-45--jeremiak-com.netlify.app/data/pe
 const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
 p.getHeader().then((h) => {
-  const map = new maplibregl.Map({
+  const map = window.map = new maplibregl.Map({
     container: "map",
-    zoom: 10,
+    zoom: 11.8,
     center: [-121.45412, 38.57809],
     style: {
       version: 8,
