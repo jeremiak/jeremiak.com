@@ -45,7 +45,7 @@ const maps = cities.map((city) => {
         {
           "id": "buildings-sometimes",
           "source": "buildings",
-          "source-layer": city,
+          "source-layer": city.id.replaceAll('-', ''),
           "type": "fill",
           "paint": {
             "fill-color": "#3d3d3d",
@@ -56,7 +56,7 @@ const maps = cities.map((city) => {
         {
           "id": "buildings-always",
           "source": "buildings",
-          "source-layer": city,
+          "source-layer": city.id.replaceAll('-', ''),
           "type": "fill",
           "paint": {
             "fill-color": "#3d3d3d",
