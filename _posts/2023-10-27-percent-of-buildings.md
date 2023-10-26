@@ -22,7 +22,7 @@ Since I use data visualization to better understand the world all the time, I fi
 
 My reaction: <strong>Fuck.</strong>
 
-Here's all the buildings in the parts of Sacramento I'm most familiar with and what it looks like when those buildings are removed. In case it wasn't apparent, I'm not a government or international agency so I don't have information about which buildings are residential and which aren't.
+Here's all the buildings in the parts of those cities and what it looks like when those buildings are removed. In case it wasn't apparent, I'm not a government or international agency so I don't have information about which buildings are residential and which aren't.
 
 Instead I just made an assumption that residential buildings are smaller than commerical or industrial ones so any building with a footprint smaller than 10,000 square meters is "residential" for my purposes.
 
