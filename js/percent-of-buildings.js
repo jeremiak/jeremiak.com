@@ -51,16 +51,8 @@ const map = window.map = new maplibregl.Map({
   },
 });
 
-map.setMaxBounds({
-  "_sw": {
-    "lng": -121.5402508655722,
-    "lat": 38.55375726273084
-  },
-  "_ne": {
-    "lng": -121.41641830777107,
-    "lat": 38.59555857341206
-  }
-})
+
+map.setMaxBounds([[-121.5402508655722,38.55375726273084], [-121.41641830777107,38.59555857341206]])
 
 setInterval(() => {
   const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
