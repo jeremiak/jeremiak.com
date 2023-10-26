@@ -1,53 +1,35 @@
 let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
-let PMTILES_URL = "https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles"
+const PMTILES_URL = "deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles"
 
 const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
 p.getHeader().then((h) => {
   const map = new maplibregl.Map({
     container: "map",
-    zoom: h.maxZoom - 2,
-    center: [h.centerLon, h.centerLat],
+    zoom: 10,
+    center: [-121.45412, 38.57809],
     style: {
       version: 8,
       sources: {
-        "example_source": {
+        "buildings": {
           type: "vector",
           url: "pmtiles://" + PMTILES_URL,
           attribution:
-            '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+            '© Microsoft',
         },
       },
       layers: [
         {
           "id": "buildings",
-          "source": "example_source",
-          "source-layer": "landuse",
+          "source": "buildings",
+          "source-layer": "sacramentopost",
           "type": "fill",
           "paint": {
             "fill-color": "steelblue",
           },
-        },
-        {
-          "id": "roads",
-          "source": "example_source",
-          "source-layer": "roads",
-          "type": "line",
-          "paint": {
-            "line-color": "black",
-          },
-        },
-        {
-          "id": "mask",
-          "source": "example_source",
-          "source-layer": "mask",
-          "type": "fill",
-          "paint": {
-            "fill-color": "white",
-          },
-        },
+        }
       ],
     },
   });
