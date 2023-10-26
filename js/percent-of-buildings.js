@@ -1,8 +1,10 @@
 let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
-const PMTILES_URL = "https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles"
+const PMTILES_URL =
+  "https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/sacramento.pmtiles";
 
+const transitionLengthMs = 2300;
 const p = new pmtiles.PMTiles(PMTILES_URL);
 protocol.add(p);
 
@@ -16,8 +18,7 @@ const map = window.map = new maplibregl.Map({
       "buildings": {
         type: "vector",
         url: "pmtiles://" + PMTILES_URL,
-        attribution:
-          '© Microsoft',
+        attribution: "© Microsoft",
       },
     },
     layers: [
@@ -28,9 +29,9 @@ const map = window.map = new maplibregl.Map({
         "type": "fill",
         "paint": {
           "fill-color": "steelblue",
-          "fill-opacity": 1
+          "fill-opacity": 1,
         },
-        "filter": ['==', ['get', 'removed'], true]
+        "filter": ["==", ["get", "removed"], true],
       },
       {
         "id": "buildings-always",
@@ -40,13 +41,18 @@ const map = window.map = new maplibregl.Map({
         "paint": {
           "fill-color": "steelblue",
         },
-        "filter": ['==', ['get', 'removed'], false]
-      }
+        "filter": ["==", ["get", "removed"], false],
+      },
     ],
     transition: {
-      duration: 300,
-      delay: 0
-    }    
+      duration: transitionLengthMs - 50,
+      delay: 0,
+    },
   },
 });
-map.showTileBoundaries = true;
+
+setInterval(() => {
+  const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
+  const next = current === 0 ? 1 : 0;
+  map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
+}, transitionLengthMs);
