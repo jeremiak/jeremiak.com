@@ -10,7 +10,6 @@ protocol.add(p);
 
 const map = window.map = new maplibregl.Map({
   container: "sacramento-map",
-  maxBounds: [[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]],
   zoom: 11.8,
   center: [-121.45412, 38.57809],
   style: {
@@ -51,6 +50,8 @@ const map = window.map = new maplibregl.Map({
     },
   },
 });
+
+map.setMaxBounds([[-121.41580845146132, 38.5949127559559], [-121.5654695640561, 38.54438915669388]])
 
 setInterval(() => {
   const current = map.getPaintProperty("buildings-sometimes", "fill-opacity");
