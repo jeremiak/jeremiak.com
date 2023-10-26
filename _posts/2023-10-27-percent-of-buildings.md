@@ -33,6 +33,10 @@ Ceasefire now!
 <h2>Sacramento</h2>
 <div id="sacramento-map" style="height: 500px;"></div>
 
+<h2>New York City</h2>
+<div id="new-york-city-map" style="height: 500px;"></div>
+
+
 <h2>San Francisco</h2>
 <div id="san-francisco-map" style="height: 500px;"></div>
 
