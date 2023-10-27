@@ -30,7 +30,7 @@ const cities = [
 
 const maps = cities.map((city) => {
   const url =
-    `https://deploy-preview-45--jeremiak-com.netlify.app/data/percent-of-buildings/${city.id}.pmtiles`;
+    `https://www.jeremiak.com/data/percent-of-buildings/${city.id}.pmtiles`;
   const p = new pmtiles.PMTiles(url);
   protocol.add(p);
 
