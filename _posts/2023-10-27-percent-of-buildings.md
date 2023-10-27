@@ -51,7 +51,7 @@ It goes without saying, but I'll say it, that this is not what it would actually
 Ceasefire now!
 
 <details style="margin-top: 1rem;">
-  <summary>Learn more about I made the maps</summary>
+  <summary>Learn more about how I made the maps</summary>
   <div>
     <p>I wrote a Makefile so that I could easily apply the process to three different cities but here's the methodology I used for each city.</p>
     <ol>
