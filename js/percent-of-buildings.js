@@ -1,6 +1,6 @@
 const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
-const transitionLengthMs = 2300;
+const transitionLengthMs = 3500;
 const cities = [
   {
     id: "sacramento",
@@ -54,7 +54,7 @@ const maps = cities.map((city) => {
           "source-layer": city.id.replaceAll('-', ''),
           "type": "fill",
           "paint": {
-            "fill-color": "#3d3d3d",
+            "fill-color": "#DD6031",
             "fill-opacity": 1,
           },
           "filter": ["==", ["get", "removed"], true],
@@ -86,7 +86,7 @@ setInterval(() => {
     "buildings-sometimes",
     "fill-opacity",
   );
-  const next = current === .15 ? 1 : .15;
+  const next = current === .05 ? 1 : .05;
   maps.forEach((map) => {
     map.setPaintProperty("buildings-sometimes", "fill-opacity", next);
   });
@@ -100,12 +100,12 @@ const observer = new MutationObserver(function (mutations) {
       if (isDark) {
         maps.forEach((map) => {
           map.setPaintProperty("buildings-always", "fill-color", "#ffffff");
-          map.setPaintProperty("buildings-sometimes", "fill-color", "#ffffff");
+          // map.setPaintProperty("buildings-sometimes", "fill-color", "#ffffff");
         });
       } else {
         maps.forEach((map) => {
           map.setPaintProperty("buildings-always", "fill-color", "#3d3d3d");
-          map.setPaintProperty("buildings-sometimes", "fill-color", "#3d3d3d");
+          // map.setPaintProperty("buildings-sometimes", "fill-color", "#3d3d3d");
         });
       }
     }
