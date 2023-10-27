@@ -24,14 +24,22 @@ My reaction: <strong>Fuck.</strong>
 
 Here's all the buildings in parts of those cities and what it looks like when just less than half of the buildings are removed.
 
-<h2>Sacramento</h2>
+<div class="map-title-container">
+  <h2>Sacramento</h2>
+  <div>~42% of buildings</div>
+</div>
 <div id="sacramento-map" style="height: 500px;"></div>
 
-<h2>New York City</h2>
+<div class="map-title-container">
+  <h2>New York City</h2>
+  <div>~42% of buildings</div>
+</div>
 <div id="new-york-city-map" style="height: 500px;"></div>
 
-
-<h2>San Francisco</h2>
+<div class="map-title-container">
+  <h2>San Francisco</h2>
+  <div>~42% of buildings</div>
+</div>
 <div id="san-francisco-map" style="height: 500px;"></div>
 
 Look, I'm not a government or international agency and I don't have information about which buildings are residential and which aren't.
@@ -90,6 +98,27 @@ await fs.writeFile('sacramento.json', JSON.stringify(featureCollection))
     </ol>
   </div>
 </details>
+
+<style>
+  .map-title-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .map-title-container div {
+    display: flex;
+  }
+
+  .map-title-container div:before {
+    background-color: #DD6031;
+    content: " ";
+    display: inline-block;
+    height: .9rem;
+    margin-right: .5rem;
+    width: 1.5rem;
+  }
+</style>
 
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css">
 <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js" crossorigin="anonymous"></script>
