@@ -6,7 +6,7 @@ prism: true
 
 I'll be honest - the last few weeks have been rough. For me, for the world, for the people in Palestine and Israel. Way worse for them than what I'm going through. Obviously.
 
-Thousands of people who were alive weeks ago are now dead. Including babies. And subsequent news cycles about how those babies died and who lied about it. And then a hospital got bombed and even more people died. And then news cycles about who did it but not about helping the people who survived it or who's families were shattered as a result. And the bombs have continued every day.
+Thousands of people who were alive weeks ago are now dead. Including babies. And then came the news cycles about how those babies died and who lied about it. And then a hospital was attacked and even more people died. And then more TV news time spent talking about who did it but not about helping the people who survived it or who's families were shattered as a result. And the bombs have continued, they have not stopped.
 
 War is horrible and uncontrollable. For me, a person living in California who has never even been near a gunfight, it's also pretty incomprehensible.
 
