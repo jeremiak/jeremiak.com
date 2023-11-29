@@ -3,7 +3,7 @@ name: Financial disclosure data for California legislators
 order: 11
 ---
 
-[How free trips for California legislators lead to bills](https://calmatters.org/politics/2023/05/california-legislature-trips-bills/) (5/4/2021)
+[How free trips for California legislators lead to bills](https://calmatters.org/politics/2023/05/california-legislature-trips-bills/) (5/4/2023)
 
 [This law should reveal who’s paying for California legislators’ travel. It’s only been used twice](https://calmatters.org/politics/2023/05/california-legislators-travel-disclosure/) (5/18/2023)
 
