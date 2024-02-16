@@ -1,8 +1,11 @@
 ---
-name: CalMatters 2022 voter guide
-href: https://calmatters.org/california-voter-guide-2022/
+name: CalMatters voter guides
 order: 10
 ---
+
+[2022](https://calmatters.org/california-voter-guide-2022/)
+
+[2024](https://calmatters.org/california-voter-guide-2024/)
 
 <!-- <div class="flex flex-column md-flex-row justify-around">
   <div class="col-12 md-col-6 md-pr1">
