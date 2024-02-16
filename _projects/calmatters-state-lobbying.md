@@ -7,4 +7,6 @@ order: 4
 
 [Oil companies top big year in lobbyist spending](https://calmatters.org/politics/capitol/2023/11/lobbying-california-2023/) (11/9/2023)
 
+[How Big Oil wins in green California](https://calmatters.org/politics/2023/12/california-big-oil/) (12/19/2023)
+
 [A record amount went to lobbying California’s government. Who were the biggest spenders?](https://calmatters.org/politics/2024/02/california-lobbying-state-government/) (2/12/2024
