@@ -1,4 +1,5 @@
 _site
 .DS_Store
+.netlify
 .sass-cache
 node_modules

@@ -1,0 +1,7 @@
+[build]
+command = "npx @11ty/eleventy"
+publish = "_site"
+
+[[edge_functions]]
+function = "block-bots"
+path = "/*"
