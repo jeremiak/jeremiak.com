@@ -13,9 +13,7 @@ There is the `robots.txt` file that's supposed to let website authors declare wh
 
 The next best thing is to try and shut off access on the server side, where we have control. Ethan used an `.htaccesss` file and the `User-Agent` HTTP header's value to determine if the requester was a bot and then, if it was, he just doesn't return the content.
 
-Cool!
-
-My personal site is hosted on Netlify, which doesn't support having an `.htaccess` file. But I used their [edge functions](https://docs.netlify.com/edge-functions/overview/) feature to limit who can see my site based on the user agent. And it worked with only two extra files.
+I wanted to do something similar though my personal site is hosted on Netlify which doesn't support having an `.htaccess` file. But I used their [edge functions](https://docs.netlify.com/edge-functions/overview/) feature to limit who can see my site based on the user agent. And it worked with only two extra files.
 
 The first is the Netlify configuration file where I set up the edge function to intercept every request on every route.
 
@@ -87,4 +85,4 @@ export default async (request, context) => {
 
 </details>
 
-Good idea Ethan! I'm also bummed that we have to do this but I'm still opting out.
+Good idea Ethan! I'm also bummed that we have to do this but I'm still trying to opt out.
