@@ -1,4 +1,5 @@
 ---
+date: 2023-10-27T12:00-07:00
 title: What would it look like if 42% of the buildings in my city were gone?
 description: An attempt to think about the level of destruction in Gaza right now with maps.
 prism: true

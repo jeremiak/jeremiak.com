@@ -1,4 +1,5 @@
 ---
+date: 2023-08-11T12:00-07:00
 title: The lobbying data Cal-Access should be publishing
 description: Getting structured data out of the Secretary of State's office about lobbying is much harder than it should be. I've got some new robots that scrape the site daily to generate JSON files that are ready-to-use for analysis.
 ---

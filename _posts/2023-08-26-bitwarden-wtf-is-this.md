@@ -1,4 +1,5 @@
 ---
+date: 2023-08-26T12:00-07:00
 title: "Dear Bitwarden: WTF is this?"
 description: My password manager won't stop asking me for my computer's password and it is weirding me out.
 ---
