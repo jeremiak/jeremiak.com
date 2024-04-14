@@ -1,5 +1,5 @@
 [build]
-command = "npx @11ty/eleventy"
+command = "npm run build"
 publish = "_site"
 
 [[edge_functions]]
