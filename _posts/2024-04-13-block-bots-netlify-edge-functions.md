@@ -1,6 +1,7 @@
 ---
+date: 2024-04-13T12:00-07:00
 title: Blockin' bots on Netlify
-description: Sniff the user agent to block AI crawlers from accessing your site
+description: Sniff the user agent in an edge function to prevent some AI crawlers from accessing your site
 prism: true
 ---
 
@@ -10,7 +11,7 @@ First the problem: all of these "AI" companies are sucking up any content they c
 
 There is the `robots.txt` file that's supposed to let website authors declare which bots can crawl the site for content but it depends on the bot authors actually caring - which they probably don't.
 
-The next best thing is to try and shut off access on the server side, where we have control. Ethan used the `User-Agent` HTTP header's value to determine if the requester was a bot and then, if it was, he just doesn't return the content.
+The next best thing is to try and shut off access on the server side, where we have control. Ethan used an `.htaccesss` file and the `User-Agent` HTTP header's value to determine if the requester was a bot and then, if it was, he just doesn't return the content.
 
 Cool!
 
@@ -86,4 +87,4 @@ export default async (request, context) => {
 
 </details>
 
-Good idea Ethan! I'm also bummed that we have to do this but it's nice to fight back and opt out.
+Good idea Ethan! I'm also bummed that we have to do this but I'm still opting out.
