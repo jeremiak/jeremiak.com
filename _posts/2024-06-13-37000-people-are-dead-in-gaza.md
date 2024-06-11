@@ -8,10 +8,6 @@ testing
 <link rel="stylesheet"
     href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css"
     crossorigin="anonymous">
-<script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"
-    crossorigin="anonymous"></script>
-<script src="https://unpkg.com/pmtiles@3.0.6/dist/pmtiles.js"></script>
-<script src="/js/37000-are-dead.js"></script>
 
 <main>
     <noscript>This map needs JavaScript turned on</noscript>
@@ -21,4 +17,9 @@ testing
 <div id="map"></div>
 
 testing
+
+<script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/pmtiles@3.0.6/dist/pmtiles.js"></script>
+<script src="/js/37000-are-dead.js"></script>
 
