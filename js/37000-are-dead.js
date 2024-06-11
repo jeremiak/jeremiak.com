@@ -6,7 +6,7 @@ const textEl = document.querySelector('#text');
 let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles",protocol.tile);
 
-let PMTILES_URL = "https://github.com/jeremiak/jeremiak.com/raw/09b4429cc7fe9a0004cce0bb75c0d297f65211c2/data/tracts.pmtiles";
+let PMTILES_URL = "https://deploy-preview-48--jeremiak-com.netlify.app/data/tracts.pmtiles"
 
 const p = new pmtiles.PMTiles(PMTILES_URL);
 
